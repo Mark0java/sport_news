@@ -21,6 +21,7 @@ public class UserService {
     public User getUserByEmail(String email){
         return userRepository.getOneByEmail(email);
     }
+    public User getUserById(Long id){ return userRepository.getOneById(id); }
 
     public boolean isExist(String email){
         return userRepository.getOneByEmail(email) != null;
