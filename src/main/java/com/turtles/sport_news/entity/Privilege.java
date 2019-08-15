@@ -1,4 +1,4 @@
-package com.turtles.sport_news.entities;
+package com.turtles.sport_news.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

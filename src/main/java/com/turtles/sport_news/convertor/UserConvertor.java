@@ -1,7 +1,7 @@
 package com.turtles.sport_news.convertor;
 
 import com.turtles.sport_news.dto.SignUpDTO;
-import com.turtles.sport_news.entities.User;
+import com.turtles.sport_news.entity.User;
 import org.springframework.stereotype.Service;
 
 @Service
