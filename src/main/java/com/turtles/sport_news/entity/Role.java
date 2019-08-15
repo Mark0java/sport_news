@@ -1,9 +1,12 @@
 package com.turtles.sport_news.entity;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
+@NoArgsConstructor
 @Entity
 public class Role {
 
@@ -22,6 +25,10 @@ public class Role {
             inverseJoinColumns = {@JoinColumn(name = "Privilege_id")}
     )
     private List<Privilege> privileges;
+
+    public Role(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;

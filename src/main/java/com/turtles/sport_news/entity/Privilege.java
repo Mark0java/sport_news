@@ -1,11 +1,14 @@
 package com.turtles.sport_news.entity;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@NoArgsConstructor
 public class Privilege {
     @Id
     @GeneratedValue
@@ -13,6 +16,10 @@ public class Privilege {
 
     @Column
     private String name;
+
+    public Privilege(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return id;
