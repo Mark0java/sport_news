@@ -5,7 +5,6 @@ public class SignUpDTO {
     private String name;
     private String surname;
     private String email;
-    private String login;
     private String password;
     private String confirmPassword;
 
@@ -39,14 +38,6 @@ public class SignUpDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPassword() {
