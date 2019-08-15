@@ -21,6 +21,17 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private boolean enabled;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @ManyToMany
     @JoinTable(
             name = "user_role",
