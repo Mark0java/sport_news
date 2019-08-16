@@ -77,7 +77,8 @@ public class InitialDataLoader implements
 
         Privilege privilege = privilegeRepository.findByName(name);
         if (privilege == null) {
-            privilege = new Privilege(name);
+            privilege = new Privilege();
+            privilege.setName(name);
             privilegeRepository.save(privilege);
         }
         return privilege;
@@ -89,7 +90,8 @@ public class InitialDataLoader implements
 
         Role role = roleRepository.findByName(name);
         if (role == null) {
-            role = new Role(name);
+            role = new Role();
+            role.setName(name);
             role.setPrivileges((List<Privilege>) privileges);
             roleRepository.save(role);
         }
