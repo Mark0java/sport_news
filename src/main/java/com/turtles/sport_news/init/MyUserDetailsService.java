@@ -5,7 +5,6 @@ import com.turtles.sport_news.entity.Role;
 import com.turtles.sport_news.entity.User;
 import com.turtles.sport_news.repository.RoleRepository;
 import com.turtles.sport_news.repository.UserRepository;
-import com.turtles.sport_news.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -25,9 +24,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private UserService userService;
 
     @Autowired
     private RoleRepository roleRepository;
