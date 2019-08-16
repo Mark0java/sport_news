@@ -1,4 +1,4 @@
-package com.turtles.sport_news;
+package com.turtles.sport_news.init;
 
 import com.turtles.sport_news.entity.Privilege;
 import com.turtles.sport_news.entity.Role;
@@ -43,7 +43,7 @@ public class InitialDataLoader implements
 
         if (alreadySetup)
             return;
-                Privilege readPrivilege
+        Privilege readPrivilege
                 = createPrivilegeIfNotFound("READ_PRIVILEGE");
         Privilege writePrivilege
                 = createPrivilegeIfNotFound("WRITE_PRIVILEGE");
@@ -59,11 +59,11 @@ public class InitialDataLoader implements
             user.setName("Admin");
             user.setSurname("Admin");
             user.setPassword(passwordEncoder.encode("test"));
+            user.setEnabled(true);
             user.setEmail("admin@test.com");
             user.setRoles(Arrays.asList(adminRole));
             userRepository.save(user);
         }
-
         alreadySetup = true;
     }
 
