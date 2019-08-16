@@ -8,9 +8,8 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.turtles.sport_news.init.MyUserDetailsService;
+import com.turtles.sport_news.service.MyUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

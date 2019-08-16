@@ -1,4 +1,4 @@
-package com.turtles.sport_news.init;
+package com.turtles.sport_news.service;
 
 import com.turtles.sport_news.entity.Privilege;
 import com.turtles.sport_news.entity.Role;
