@@ -3,7 +3,7 @@ package com.turtles.sport_news.entity;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "UserAccount")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
