@@ -22,7 +22,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("SpringBoot-Swagger-API")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.turtles.testsecurity.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.turtles.sport_news.controller"))
                 .build()
                 .consumes(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE.toString()))
                 .produces(Sets.newHashSet(MediaType.APPLICATION_JSON_VALUE.toString()));

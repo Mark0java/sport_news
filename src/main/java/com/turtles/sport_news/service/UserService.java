@@ -18,10 +18,18 @@ public class UserService {
         return user;
     }
 
+    public void delete(Long id) {
+        userRepository.delete(findOne(id));
+    }
+
     public User getUserByEmail(String email){
         return userRepository.getOneByEmail(email);
     }
     public User getUserById(Long id){ return userRepository.getOneById(id); }
+
+    public User findOne(Long id){
+        return userRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("User with id" +id+" not exist"));
+    }
 
     public boolean isExist(String email){
         return userRepository.getOneByEmail(email) != null;

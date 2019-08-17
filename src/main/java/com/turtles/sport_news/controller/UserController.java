@@ -37,6 +37,11 @@ public class UserController {
         return new ResponseEntity<SignUpDTO>(userConvertor.toSignUpDTO(account), HttpStatus.OK);
     }
 
+    @DeleteMapping("/account/{id}")
+    public void delete(@PathVariable(name = "id") Long id) {
+        userService.delete(id);
+    }
+
     private boolean validate(SignUpDTO signUpDTO) {
         if (validationService.allExist(signUpDTO.getEmail(), signUpDTO.getPassword(), signUpDTO.getConfirmPassword(), signUpDTO.getEmail(), signUpDTO.getName(), signUpDTO.getSurname())) {
             return signUpDTO.getConfirmPassword().equals(signUpDTO.getPassword());
