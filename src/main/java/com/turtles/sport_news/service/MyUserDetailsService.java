@@ -49,10 +49,11 @@ public class MyUserDetailsService implements UserDetailsService {
     }
 
     private List<String> getPrivileges(List<Role> roles){
-        List<String> privileges = new ArrayList<>();
         List<Privilege> collection = new ArrayList<>();
+        List<String> privileges = new ArrayList<>();
 
         for(Role role:roles){
+            privileges.add(role.getName());
             collection.addAll(role.getPrivileges());
         }
 
