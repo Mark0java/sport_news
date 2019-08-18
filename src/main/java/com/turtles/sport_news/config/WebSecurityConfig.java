@@ -30,7 +30,8 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home","/registration","/account/**").permitAll()
+                .antMatchers("/","/registration","/account/**").permitAll()
+                .antMatchers("/home").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -41,23 +42,9 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .permitAll();
 
     }
-    
+
     @Bean
     public UserDetailsService getUserDetailsService() {
     	return new MyUserDetailsService();
     }
-    
-    
-//    @Bean
-//    @Override
-//    public UserDetailsService userDetailsService() {
-//        UserDetails user =
-//                User.withDefaultPasswordEncoder()
-//                        .username("user")
-//                        .password("password")
-//                        .roles("ADMIN")
-//                        .build();
-//
-//        return new InMemoryUserDetailsManager(user);
-//    }
 }
