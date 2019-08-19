@@ -22,7 +22,12 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 "/swagger-resources",
                 "/configuration/security",
                 "/swagger-ui.html",
-                "/webjars/**");
+                "/webjars/**",
+                "/resources/**",
+                "/static/**",
+                "/css/**",
+                "/js/**",
+                "/fonts/**");
     }
 
     @Override
@@ -30,8 +35,8 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http
                 .authorizeRequests()
-                .antMatchers("/","/registration","/account/**").permitAll()
-                .antMatchers("/home").hasRole("ADMIN")
+                .antMatchers("/","/registration","/account/**", "/index").permitAll()
+                .antMatchers("/index").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
