@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
+    
 </head>
 <body>
-<form th:action="@{/hello}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
+<form th:action="@{/registration}" method="post">
+    <div><label> Name : <input type="text" name="name"/> </label></div>
+    <div><label> Surname: <input type="text" name="surname"/> </label></div>
+    <div><label> Email: <input type="email" name="email"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>
-
+    <div><label> ConfirmPassword: <input type="password" name="confirmpassword"/> </label></div>
+    <div><input type="submit" value="Sign Up"/></div>
 </form>
-<button onclick="myFunction()">Sing up</button>
 
-<script>
-    function myFunction() {
-        location.replace("http://localhost:8080/hello")
-    }
-</script>
+
+<!--<button onclick="myFunction()">Sing up</button>-->
+
+<!--<script>-->
+<!--    function myFunction() {-->
+<!--        location.replace("http://localhost:8080/hello")-->
+<!--    }-->
+<!--</script>-->
 </body>
 </html>
