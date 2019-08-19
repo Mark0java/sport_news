@@ -3,18 +3,25 @@ package com.turtles.sport_news.controller;
 import com.turtles.sport_news.convertor.UserConvertor;
 import com.turtles.sport_news.dto.SignUpDTO;
 import com.turtles.sport_news.entity.User;
+import com.turtles.sport_news.repository.UserRepository;
 import com.turtles.sport_news.service.UserService;
 import com.turtles.sport_news.util.ValidationService;
+import org.h2.engine.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
+import java.util.Map;
 
 @RestController
 public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private ValidationService validationService;
@@ -48,4 +55,6 @@ public class UserController {
         }
         return false;
     }
+
+
 }
