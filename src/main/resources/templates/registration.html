@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
 <form th:action="@{/registration}" method="post">
-    <div><label> Name : <input type="text" name="name"/> </label></div>
+    <div><label> Name : <input type="text" class="" name="name"/> </label></div>
     <div><label> Surname: <input type="text" name="surname"/> </label></div>
     <div><label> Email: <input type="email" name="email"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><label> ConfirmPassword: <input type="password" name="confirmpassword"/> </label></div>
-    <div><input type="submit" value="Sign Up"/></div>
+    <div><input type="submit" class="col s12 waves-effect waves-red btn" value="Sign Up"/></div>
 </form>
 
 

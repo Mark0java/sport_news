@@ -11,11 +11,10 @@ public class SportNewsApplication {
     public static void main(String[] args) {
         SpringApplication.run(SportNewsApplication.class, args);
     }
-    
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
 }
