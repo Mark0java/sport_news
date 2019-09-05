@@ -1,10 +1,6 @@
 package com.turtles.sport_news.security;
 
 import com.turtles.sport_news.entity.User;
-import com.turtles.sport_news.security.JwtRequest;
-import com.turtles.sport_news.security.JwtResponse;
-import com.turtles.sport_news.security.JwtUserDetailsService;
-import com.turtles.sport_news.security.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
