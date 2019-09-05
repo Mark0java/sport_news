@@ -7,6 +7,16 @@ public class ViewDTO {
 
     private String text;
 
+    private Long categoryId;
+
+    private Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
     public String getTitle() {
         return title;
     }
