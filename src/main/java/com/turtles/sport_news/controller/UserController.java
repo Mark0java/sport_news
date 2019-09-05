@@ -20,8 +20,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserRepository userRepository;
 
     @Autowired
     private ValidationService validationService;
@@ -43,6 +41,7 @@ public class UserController {
         User account = userService.getUserById(id);
         return new ResponseEntity<SignUpDTO>(userConvertor.toSignUpDTO(account), HttpStatus.OK);
     }
+
 
     @DeleteMapping("/account/{id}")
     public void delete(@PathVariable(name = "id") Long id) {

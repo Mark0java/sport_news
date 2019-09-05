@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class UserConvertor {
 
     @Autowired
-    RoleRepository roleRepository;
+    private RoleRepository roleRepository;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
