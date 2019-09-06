@@ -2,14 +2,20 @@ package com.turtles.sport_news.convertor;
 
 import com.turtles.sport_news.dto.ViewDTO;
 import com.turtles.sport_news.entity.View;
-import com.turtles.sport_news.repository.CategoryRepository;
 import com.turtles.sport_news.repository.ViewRepository;
+import com.turtles.sport_news.service.CategoryService;
+import com.turtles.sport_news.service.ViewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ViewConvertor {
 
     @Autowired
     private ViewRepository viewRepository;
+
+    @Autowired
+    private CategoryService categoryService;
 
     public ViewDTO toViewDTO(View view){
         ViewDTO viewDTO = new ViewDTO();
@@ -28,7 +34,7 @@ public class ViewConvertor {
         view.setImgURL(viewDTO.getImgURL());
         view.setText(viewDTO.getText());
         view.setTitle(viewDTO.getTitle());
-        view.setCategory(view.getCategory());
+        view.setCategory(categoryService.getCategoryById(viewDTO.getCategoryId()));
 
         return view;
 

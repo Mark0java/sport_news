@@ -9,7 +9,7 @@ public class ViewDTO {
 
     private Long categoryId;
 
-    private Long getCategoryId() {
+    public Long getCategoryId() {
         return categoryId;
     }
 
