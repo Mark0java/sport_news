@@ -1,6 +1,5 @@
 package com.turtles.sport_news.service;
 
-import com.turtles.sport_news.dto.CategoryDTO;
 import com.turtles.sport_news.entity.Category;
 import com.turtles.sport_news.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
