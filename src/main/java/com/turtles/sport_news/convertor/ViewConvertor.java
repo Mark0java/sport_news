@@ -4,7 +4,6 @@ import com.turtles.sport_news.dto.ViewDTO;
 import com.turtles.sport_news.entity.View;
 import com.turtles.sport_news.repository.ViewRepository;
 import com.turtles.sport_news.service.CategoryService;
-import com.turtles.sport_news.service.ViewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

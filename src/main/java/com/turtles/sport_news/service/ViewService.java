@@ -10,6 +10,14 @@ public class ViewService {
     @Autowired
     private ViewRepository viewRepository;
 
+    public void delete(Long id){
+        viewRepository.delete(findOne(id));
+    }
+
+    public View createView(View view){
+        return viewRepository.save(view);
+    }
+
     public View findOne(Long id){
         return viewRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("View with id " +id+" not exist"));
     }

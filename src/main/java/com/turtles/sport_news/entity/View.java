@@ -14,6 +14,9 @@ public class View {
 
     private String text;
 
+    @ManyToOne
+    private Category category;
+
     public Long getId() {
         return id;
     }
@@ -53,7 +56,4 @@ public class View {
     public void setCategory(Category category) {
         this.category = category;
     }
-
-    @ManyToOne
-    private Category category;
 }
