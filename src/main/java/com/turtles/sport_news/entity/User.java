@@ -52,7 +52,7 @@ public class User {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    public void setSurname(String xsurname) {
         this.surname = surname;
     }
 

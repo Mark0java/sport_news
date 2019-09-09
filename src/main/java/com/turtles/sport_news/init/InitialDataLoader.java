@@ -33,7 +33,7 @@ public class InitialDataLoader implements
 
     @Autowired
     private PrivilegeRepository privilegeRepository;
-    
+
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
