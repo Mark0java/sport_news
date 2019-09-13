@@ -1,6 +1,9 @@
 package com.turtles.sport_news.dto;
 
-public class ViewDTO {
+public class ViewResponse {
+
+    Long id;
+
     private String title;
 
     private String imgURL;
@@ -8,6 +11,14 @@ public class ViewDTO {
     private String text;
 
     private Long categoryId;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getCategoryId() {
         return categoryId;
