@@ -3,7 +3,8 @@ package com.turtles.sport_news.controller;
 import java.util.ArrayList;
 import java.util.List;
 import com.turtles.sport_news.convertor.CategoryConvertor;
-import com.turtles.sport_news.dto.CategoryDTO;
+import com.turtles.sport_news.dto.CategoryRequest;
+import com.turtles.sport_news.dto.CategoryResponse;
 import com.turtles.sport_news.entity.Category;
 import com.turtles.sport_news.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,25 +24,25 @@ public class CategoryController {
     private CategoryConvertor categoryConvertor;
 
     @PostMapping("/category")
-    public ResponseEntity<CategoryDTO> createNewCategory(@RequestBody CategoryDTO categoryDTO){
-        Category category = categoryConvertor.fromCategoryDTO(categoryDTO);
+    public ResponseEntity<CategoryRequest> createNewCategory(@RequestBody CategoryRequest categoryRequest){
+        Category category = categoryConvertor.fromCategoryRequest(categoryRequest);
         category = categoryService.createCategory(category);
-        return new ResponseEntity<CategoryDTO> (categoryConvertor.toCategoryDTO(category), HttpStatus.CREATED);
+        return new ResponseEntity<> (categoryConvertor.toCategoryRequest(category), HttpStatus.CREATED);
     }
 
     @GetMapping("/category/{id}")
-    public ResponseEntity<CategoryDTO> getCategory(@PathVariable(name = "id") Long id) {
+    public ResponseEntity<CategoryResponse> getCategory(@PathVariable(name = "id") Long id) {
         Category category = categoryService.getCategoryById(id);
-        return new ResponseEntity<CategoryDTO>(categoryConvertor.toCategoryDTO(category), HttpStatus.OK);
+        return new ResponseEntity<>(categoryConvertor.toCategoryResponse(category), HttpStatus.OK);
     }
 
     @GetMapping("/category")
-    public List<CategoryDTO> findAll(){
-        ArrayList<CategoryDTO> categoryDTOS = new ArrayList<>();
+    public List<CategoryResponse> findAll(){
+        ArrayList<CategoryResponse> categoryResponses = new ArrayList<>();
         for (Category category: categoryService.getAllCategories()){
-            categoryDTOS.add(categoryConvertor.toCategoryDTO(category));
+            categoryResponses.add(categoryConvertor.toCategoryResponse(category));
         }
-        return categoryDTOS;
+        return categoryResponses;
     }
 
     @DeleteMapping("/category/{id}")
