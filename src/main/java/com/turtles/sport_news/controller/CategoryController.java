@@ -10,7 +10,11 @@ import com.turtles.sport_news.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.security.RolesAllowed;
 
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -24,6 +28,7 @@ public class CategoryController {
     private CategoryConvertor categoryConvertor;
 
     @PostMapping("/category")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<CategoryRequest> createNewCategory(@RequestBody CategoryRequest categoryRequest){
         Category category = categoryConvertor.fromCategoryRequest(categoryRequest);
         category = categoryService.createCategory(category);
@@ -45,6 +50,7 @@ public class CategoryController {
         return categoryResponses;
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/category/{id}")
     public void delete(@PathVariable(name = "id") Long id) {
         categoryService.delete(id);

@@ -3,8 +3,8 @@ package com.turtles.sport_news.controller;
 import com.turtles.sport_news.entity.User;
 import com.turtles.sport_news.security.JwtRequest;
 import com.turtles.sport_news.security.JwtResponse;
-import com.turtles.sport_news.security.JwtUserDetailsService;
 import com.turtles.sport_news.security.JwtUtils;
+import com.turtles.sport_news.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class JwtAuthController {
     private JwtUtils jwtTokenUtil;
 
     @Autowired
-    private JwtUserDetailsService userDetailsService;
+    private MyUserDetailsService userDetailsService;
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
@@ -32,12 +32,6 @@ public class JwtAuthController {
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
         final String token = jwtTokenUtil.generateToken(userDetails);
         return ResponseEntity.ok(new JwtResponse(token));
-    }
-
-    @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public ResponseEntity<?> registration(@RequestBody User user) {
-        user = userDetailsService.registerUser(user);
-        return new ResponseEntity<User>(user, HttpStatus.CREATED);
     }
 
     private void authenticate(String username, String password) throws Exception {
