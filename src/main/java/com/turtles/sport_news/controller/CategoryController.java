@@ -28,7 +28,7 @@ public class CategoryController {
     private CategoryConvertor categoryConvertor;
 
     @PostMapping("/category")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<CategoryRequest> createNewCategory(@RequestBody CategoryRequest categoryRequest){
         Category category = categoryConvertor.fromCategoryRequest(categoryRequest);
         category = categoryService.createCategory(category);

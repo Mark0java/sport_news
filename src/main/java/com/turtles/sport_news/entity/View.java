@@ -10,6 +10,7 @@ public class View {
 
     private String title;
 
+    @Column(length = 3000)
     private String imgURL;
 
     private String text;
